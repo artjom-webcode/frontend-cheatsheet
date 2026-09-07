@@ -140,6 +140,18 @@ const list = [
     itemLink: "/cards/index.html",
     itemLinkGithub: "cards",
   },
+  {
+    itemName: "Карточка frontend mentor",
+    itemText: "",
+    itemLink: "/cart-frontend-mentor-01/index.html",
+    itemLinkGithub: "cart-frontend-mentor-01",
+  },
+  {
+    itemName: "Карточка frontend mentor 2",
+    itemText: "",
+    itemLink: "/cart-frontend-mentor-02/index.html",
+    itemLinkGithub: "cart-frontend-mentor-02",
+  },
 ];
 
 function renderMarkUp() {
