@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__left">
+        <a href="#">ABOUT STUDIO</a> <a href="#">PRICES</a> <a href="#">PROJECTS</a>
+      </div>
+      <a href="#" class="header__logo"> <img src="logo.svg" alt="Logo" /> </a>
+      <a href="" class="header__right"> +38 (068) 255 45 85 </a>
+    </header>
+  </body>
+</html>
+
+<style>
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .header__left {
+    display: flex;
+    gap: 30px;
+  }
+  .header__logo {
+    justify-self: center;
+  }
+  .header__right {
+    justify-self: end;
+  }
+</style>
+
+<!-- 
+Главное:
+grid-template-columns: 1fr auto 1fr;
+1fr слева и справа всегда одинаковые → поэтому auto посередине всегда находится ровно по центру, даже если левый и правый элементы разной ширины.
+-->

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <!--=============== GOOGLE FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/style.css" />
+    <title></title>
+  </head>
+
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header">
+      <div class="header__inner">
+        <!-- Левая секция: Логотип -->
+        <a class="logo" href="index.html">
+          <img class="logo__img" src="img/logo.svg" alt="Logo" />
+        </a>
+
+        <!-- Центральная и Правая секции: Навигация и Кнопки -->
+        <nav class="nav" id="main-navigation" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+            <li class="nav__item"><a class="nav__link" href="#pages">Pages</a></li>
+            <li class="nav__item"><a class="nav__link" href="#event">Event</a></li>
+            <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a></li>
+            <li class="nav__item"><a class="nav__link" href="#blog">Blog</a></li>
+          </ul>
+
+          <div class="header__actions">
+            <a class="header__action header__action--login" href="#">Log in</a>
+            <a class="header__action header__action--signup" href="#">Sign up</a>
+          </div>
+        </nav>
+
+        <!-- Кнопка Бургер (видна только на мобильных) -->
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <section>Home</section>
+      <section>Pages</section>
+      <section>Event</section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

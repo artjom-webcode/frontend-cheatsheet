@@ -1,0 +1,104 @@
+/*
+- Font sizes (px)
+
+/**************************/
+/* RESET */
+/**************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--clr-neutral-light-1);
+  font-family: var(--font-2);
+  color: var(--clr-dark-2);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+/* ПРАВИЛЬНО: Пишем стили для своего класса */
+
+.portfolio__dots .swiper-pagination-bullet {
+  background-color: #000;
+  opacity: 0.3;
+}
+
+.portfolio__dots .swiper-pagination-bullet-active {
+  background-color: #ffd67e;
+  opacity: 1;
+}
+
+.portfolio {
+}
+.portfolio__wrapper {
+  height: 100vh;
+  border: 2px solid #495057;
+}
+.swiper {
+}
+.swiper-portfolio {
+}
+.swiper-wrapper {
+}
+.portfolio__card {
+  border: 2px solid #f03e3e;
+}
+.swiper-slide {
+}
+.portfolio__dots {
+}
+.swiper-pagination {
+}

@@ -1,0 +1,39 @@
+<!-- 
+ Как работать с картинками чтобы они были небольшого размера.
+ https://squoosh.app/
+
+ фотку туда
+ выбираем формат avif потом webp и jpeg тоже уменьшаем размер
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header"></header>
+
+    <picture>
+      <source srcset="img/header-bg.avif" type="image/avif" />
+      <source srcset="img/header-bg.webp" type="image/webp" />
+      <img src="img/header-bg.jpg" alt="Описание изображения" />
+    </picture>
+  </body>
+</html>
+
+<style>
+  .header {
+    height: 100vh;
+
+    background-image: url(../img/header-bg.jpg);
+
+    background-image: image-set(
+      "../img/header-bg.avif" type("image/avif"),
+      "../img/header-bg.webp" type("image/webp"),
+      "../img/header-bg.jpg" type("image/jpg")
+    );
+  }
+</style>

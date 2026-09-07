@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input,
+button {
+  border: none;
+  outline: none;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+    sans-serif;
+}
+
+/* =============== HEADER & NAV ================== */
+.header {
+  background-color: #1e4e89;
+  /* sticky header */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition:
+    box-shadow 0.4s,
+    background-color 0.4s;
+}
+
+/* header active */
+.header--active-shadow {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.3);
+}
+
+.header__inner {
+  max-width: 1330px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.menu__list {
+  display: flex;
+  gap: 30px;
+}
+
+.menu__link {
+  color: #333;
+}
+
+/* menu active */
+.menu__link--active {
+  color: aqua;
+}
+
+.btn-mobile {
+  display: none;
+}
+
+/* ========== MOBILE MENU ============= */
+@media (max-width: 944px) {
+  .menu {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    /* Делаем на весь экран. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    /* Полностью скрывем меню */
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+  }
+
+  .menu__list {
+    flex-direction: column;
+    gap: 30px;
+    font-size: 50px;
+  }
+
+  .menu--active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  /* =========== Создаем саму кнопку бургер ============== */
+  .btn-mobile {
+    display: block;
+    width: 40px;
+    height: 18px;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 5;
+  }
+
+  .line-1,
+  .line-2,
+  .line-3 {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.5s;
+    background-color: #fff;
+  }
+
+  .line-1 {
+    top: 0;
+  }
+
+  .line-2 {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  .line-3 {
+    bottom: 0;
+  }
+
+  /* Если у кнопки появляется класс btn-mobile--active то у класса .line-1 меняем стиль.  */
+  .btn-mobile.btn-mobile--active .line-1 {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+
+  .btn-mobile.btn-mobile--active .line-2 {
+    transform: scale(0);
+  }
+
+  .btn-mobile.btn-mobile--active .line-3 {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+}
+
+section {
+  height: 100vh;
+}
+.section-1 {
+  /* background-color: #333; */
+}

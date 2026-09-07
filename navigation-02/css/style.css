@@ -1,0 +1,280 @@
+/**************************/
+/* VARIABLES */
+/**************************/
+:root {
+  /* Fonts */
+  --font-heading: "Marcellus", serif;
+  --font-body: "Jost", sans-serif;
+
+  /* Font sizes */
+  --fz-h1: 6rem; /* 96px */
+  --fz-h2: 2.6875rem; /* 43px */
+  --fz-h3: 2.25rem; /* 36px */
+  --fz-h4: 1.5rem; /* 24px */
+  --fz-h5: 1.375rem; /* 22px */
+  --fz-h6: 1.125rem; /* 18px */
+  --fz-body-lg: 1.125rem; /* 18px */
+  --fz-body-md: 1rem; /* 16px */
+  --fz-body-sm: 0.875rem; /* 14px */
+  --fz-body-xs: 0.75rem; /* 12px */
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* Colors */
+  --clr-body: #fffcf6;
+  --clr-heading-1: #000000;
+  --clr-text-1: #525252;
+  --clr-text-2: #71717a;
+  --clr-text-primary: #121926;
+  --clr-text-secondary: #697586;
+  --clr-bg-primary: #ffffff;
+  --clr-border: #e3e8ef;
+  --clr-error: #df1c41;
+}
+
+/**************************/
+/* RESET */
+/**************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--clr-body);
+  font-family: var(--font-body);
+  color: var(--clr-dark-2);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
+.container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+/**************************/
+/* HEADER */
+/**************************/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header__inner {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 20px 25px;
+  background-color: #525252;
+
+  /* Используем Grid на родительском контейнере */
+  display: grid;
+  grid-template-columns: auto 1fr; /* Лого | Меню по центру | Кнопки */
+  align-items: center;
+}
+
+/* 1. Логотип */
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo__img {
+  height: 40px; /* Задаем фиксированную высоту для аккуратности */
+  width: auto;
+}
+
+/* 2. Навигационный блок */
+.nav {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 100%;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin: 0 auto;
+  /* margin: 0 auto; Магия CSS: центрирует список внутри flex-контейнера */
+}
+
+.nav__link {
+  color: #ffffff;
+  font-weight: var(--fw-medium);
+}
+
+.nav__link:hover {
+  opacity: 0.8;
+}
+
+/* 3. Кнопки действий */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header__action {
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.header__action--signup {
+  background-color: #ffffff;
+  color: #525252;
+}
+
+/* Бургер-кнопка (скрыта на десктопе) */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  background-color: #ffd67e;
+  padding: 12px 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.header__burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #000000;
+  transition: all 0.3s ease;
+}
+
+/**************************/
+/* ADAPTIVE (MOBILE) */
+/**************************/
+@media (max-width: 768px) {
+  .header__inner {
+    /* На мобильных переключаем на Flexbox для простого выравнивания logo <-> burger */
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  /* Выпадающее/полноэкранное меню */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #525252;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 20px 40px;
+
+    /* Скрываем меню по умолчанию */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Класс, который добавляется через JavaScript при клике на бургер */
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 25px;
+    font-size: var(--fz-h4);
+  }
+
+  .header__actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .header__action {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.main {
+  padding-top: 100px;
+}
+
+section {
+  font-size: 44px;
+  color: #525252;
+  height: 100vh;
+  border-bottom: 1px solid #999;
+}

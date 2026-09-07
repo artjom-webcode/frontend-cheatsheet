@@ -1,0 +1,200 @@
+/**************************/
+/* VARIABLES */
+/**************************/
+:root {
+  --clr-indigo-0: #edf2ff;
+  --clr-indigo-1: #dbe4ff;
+  --clr-indigo-2: #bac8ff;
+  --clr-indigo-3: #91a7ff;
+  --clr-indigo-4: #748ffc;
+  --clr-indigo-5: #5c7cfa;
+  --clr-indigo-6: #4c6ef5;
+  --clr-indigo-7: #4263eb;
+  --clr-indigo-8: #3b5bdb;
+  --clr-indigo-9: #364fc7;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  --font-1: "Crimson Text", serif;
+  --font-2: "DM Sans", sans-serif;
+}
+
+/**************************/
+/* RESET */
+/**************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: var(--font-2);
+  color: var(--clr-indigo-9);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+
+/**************************/
+/* GENERAL REUSABLE COMPONENTS */
+/**************************/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+/**************************/
+/* PORTFOLIO */
+/**************************/
+.portfolio {
+  background-color: #fff9ed;
+  padding: 101px 0 131px 0;
+}
+
+.portfolio__label {
+  margin: 0 auto;
+  text-align: center;
+  width: 176px;
+  background-color: var(--clr-indigo-2);
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.portfolio__title {
+  margin-top: 24px;
+  font-size: 64px;
+  max-width: 1100px;
+  font-weight: var(--fw-light);
+  text-align: center;
+}
+
+/* --- Дорожка со слайдами (десктоп: обычный список) --- */
+.portfolio__track-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 44px;
+}
+
+.portfolio__item {
+  padding: 62px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.portfolio__media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio__content-text {
+  color: #91a7ff;
+}
+
+.portfolio__pagination {
+  display: none;
+}
+
+@media (max-width: 724px) {
+  .portfolio__content-title {
+    font-size: 24px;
+  }
+  .portfolio__content-text {
+    font-size: 12px;
+  }
+}
+
+/* --- МОБИЛЬНЫЕ ЭКРАНЫ (<= 690px): активен Swiper --- */
+@media (max-width: 690px) {
+  .portfolio__track-inner.swiper-wrapper {
+    /* ключевой момент: на мобильном высота задаётся Swiper-ом,
+       поэтому flex-direction: column тут быть не должно */
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-top: 24px;
+  }
+
+  .portfolio__item {
+    grid-template-columns: 1fr;
+    padding: 0;
+    /* каждый слайд должен занимать весь свой слот целиком */
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .portfolio__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .portfolio__pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: var(--clr-indigo-6);
+    opacity: 0.2;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .portfolio__pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 20px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <!--=============== GOOGLE FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!--=============== SWIPPER ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/style.css" />
+    <title></title>
+  </head>
+
+  <body>
+    <main class="main">
+      <section class="products">
+        <div class="container">
+          <div class="products__title">
+            <h2 class="title-2">Best Selling Product</h2>
+            <!-- Tabs button -->
+            <div class="products__tabs">
+              <div class="tab-controls">
+                <button data-tab="all" class="tab-controls__btn tab-controls__btn--active">
+                  All
+                </button>
+                <button data-tab="chair" class="tab-controls__btn">Chair</button>
+                <button data-tab="bed" class="tab-controls__btn">Beds</button>
+                <button data-tab="sofa" class="tab-controls__btn">Sofa</button>
+                <button data-tab="lamp" class="tab-controls__btn">Lamp</button>
+              </div>
+            </div>
+
+            <!-- slider -->
+            <div class="products__slider">
+              <!-- //slider -->
+              <div class="slider">
+                <!-- Slider main container -->
+                <div class="swiper">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <article data-tab-value="chair" class="card swiper-slide">
+                      <h2>Chair</h2>
+                    </article>
+
+                    <article data-tab-value="lamp" class="card swiper-slide">
+                      <h2>Lamp</h2>
+                    </article>
+
+                    <article data-tab-value="bed" class="card swiper-slide">
+                      <h2>Bed</h2>
+                    </article>
+
+                    <article data-tab-value="sofa" class="card swiper-slide">
+                      <h2>Sofa</h2>
+                    </article>
+
+                    <article data-tab-value="chair" class="card swiper-slide">
+                      <h2>Chair</h2>
+                    </article>
+
+                    <article data-tab-value="sofa" class="card swiper-slide">
+                      <h2>Sofa</h2>
+                    </article>
+
+                    <article data-tab-value="lamp" class="card swiper-slide">
+                      <h2>Lamp</h2>
+                    </article>
+
+                    <article data-tab-value="bed" class="card swiper-slide">
+                      <h2>Bed</h2>
+                    </article>
+
+                    <article data-tab-value="chair" class="card swiper-slide">
+                      <h2>Chair</h2>
+                    </article>
+
+                    <article data-tab-value="bed" class="card swiper-slide">
+                      <h2>Bed</h2>
+                    </article>
+
+                    <article data-tab-value="lamp" class="card swiper-slide">
+                      <h2>Lamp</h2>
+                    </article>
+
+                    <article data-tab-value="sofa" class="card swiper-slide">
+                      <h2>Sofa</h2>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <button id="sliderPrev" class="slider__btn slider__btn--prev">
+                  <ion-icon name="arrow-back-outline"></ion-icon>
+                </button>
+
+                <button id="sliderNext" class="slider__btn slider__btn--next">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+              </div>
+              <!-- //slider -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
