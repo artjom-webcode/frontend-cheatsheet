@@ -32,6 +32,61 @@ const list = [
     itemLinkGithub: "navigation-02",
   },
   {
+    itemName: "Навигация 3",
+    itemText: "",
+    itemLink: "/navigation-03/index.html",
+    itemLinkGithub: "navigation-03",
+  },
+  {
+    itemName: "Навигация 4",
+    itemText: "",
+    itemLink: "/navigation-04/index.html",
+    itemLinkGithub: "navigation-04",
+  },
+  {
+    itemName: "Навигация 5",
+    itemText: "",
+    itemLink: "/navigation-05/index.html",
+    itemLinkGithub: "navigation-05",
+  },
+  {
+    itemName: "Навигация 6",
+    itemText: "",
+    itemLink: "/navigation-06/index.html",
+    itemLinkGithub: "navigation-06",
+  },
+  {
+    itemName: "Навигация 7",
+    itemText: "",
+    itemLink: "/navigation-07/index.html",
+    itemLinkGithub: "navigation-07",
+  },
+  {
+    itemName: "Навигация 8",
+    itemText: "",
+    itemLink: "/navigation-08/index.html",
+    itemLinkGithub: "navigation-08",
+  },
+  {
+    itemName: "Навигация внизу 1",
+    itemText: "",
+    itemLink: "/navigation-bottom-01/index.html",
+    itemLinkGithub: "navigation-bottom-01",
+  },
+  {
+    itemName: "Навигация внизу 2",
+    itemText: "",
+    itemLink: "/navigation-bottom-02/index.html",
+    itemLinkGithub: "navigation-bottom-02",
+  },
+  {
+    itemName: "Навигация внизу 3",
+    itemText: "",
+    itemLink: "/navigation-bottom-03/index.html",
+    itemLinkGithub: "navigation-bottom-03",
+  },
+
+  {
     itemName: "scroll-snap",
     itemText: "",
     itemLink: "/scroll-snap/index.html",
@@ -46,7 +101,7 @@ const list = [
   {
     itemName: "swiper-basic",
     itemText: "",
-    itemLink: "/sswiper-basic/index.html",
+    itemLink: "/swiper-basic/index.html",
     itemLinkGithub: "swiper-basic",
   },
   {
@@ -87,7 +142,7 @@ function renderMarkUp() {
     html += `<li class="item">
           <h3 class="item__title">${item.itemName}</h3>
           <p class="item__text">${item.itemText}</p>
-          <a href="${item.itemLink}" class="item__link">Link</a>
+          <a href="..${item.itemLink}" class="item__link">Link</a>
           <a href="https://github.com/artjom-webcode/frontend-cheatsheet/tree/main/${item.itemLinkGithub}"
             class="item__link-github"
             >Github</a

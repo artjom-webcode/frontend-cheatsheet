@@ -1,0 +1,346 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+font-family: "Outfit", sans-serif;
+*/
+
+/**************************/
+/* VARIABLES */
+/**************************/
+:root {
+  /* COLORS */
+  --clr-primary-1: #212121;
+  --clr-primary-2: #3d3d3d;
+  --clr-primary-3: #f1f7fa;
+  --clr-secondary-1: #0998c3;
+  --clr-secondary-2: #6bdbfd;
+  --clr-secondary-3: #dbf5fd;
+  --clr-other-red: #fc6363;
+  --clr-other-orange: #ffb546;
+  --clr-other-green: #06c698;
+  --clr-neutral-white: #ffffff;
+  --clr-neutral-dark: #262626;
+  --clr-neutral-gray: #808080;
+  --clr-neutral-light-1: #eeeeee;
+  --clr-neutral-light-2: #fafafa;
+  --clr-dark-1: #131317;
+  --clr-dark-2: #2e2e2e;
+  --clr-dark-3: #454554;
+
+  /* FONT WEIGHTS */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* FONTS */
+  --font-1: "Poppins", sans-serif;
+  /* --font-2: "DM Sans", sans-serif; */
+
+  /* FONT SIZES */
+  /* не забывай сразу со шрифтом добовлять такой же lh */
+  --fz-xs: 0.75rem; /* 12px */
+  --fz-sm: 0.875rem; /* 14px */
+  --fz-base: 1rem; /* 16px */
+  --fz-lg: 1.125rem; /* 18px */
+  --fz-xl: 1.25rem; /* 20px */
+  --fz-2xl: 1.5rem; /* 24px */
+  --fz-3xl: 1.875rem; /* 30px */
+  --fz-4xl: 2.25rem; /* 36px */
+  --fz-5xl: 3rem; /* 48px */
+  --fz-6xl: 3.75rem; /* 60px */
+  --fz-7xl: 4.5rem; /* 72px */
+  --fz-8xl: 6rem; /* 96px */
+  --fz-9xl: 8rem; /* 128px */
+
+  /* LINE HEIGHTS */
+  --lh-xs: 1rem; /* 16px */
+  --lh-sm: 1.25rem; /* 20px */
+  --lh-base: 1.5rem; /* 24px */
+  --lh-lg: 1.75rem; /* 28px */
+  --lh-xl: 1.75rem; /* 28px */
+  --lh-2xl: 2rem; /* 32px */
+  --lh-3xl: 2.25rem; /* 36px */
+  --lh-4xl: 2.5rem; /* 40px */
+  --lh-5xl: 1; /* 48px */
+  --lh-6xl: 1; /* 60px */
+  --lh-7xl: 1; /* 72px */
+  --lh-8xl: 1; /* 96px */
+  --lh-9xl: 1; /* 128px */
+
+  /*========== Spaces  ==========*/
+  /* sp-1 это 4 тоесть все кратное 4.  */
+  --sp-xxxs: 0.125rem; /* 2px  */
+  --sp-xxs: 0.25rem; /* 4px  */
+  --sp-xs: 0.5rem; /* 8px  */
+  --sp-sm: 0.75rem; /* 12px */
+  --sp-md: 1rem; /* 16px (Базовый шаг) */
+  --sp-lg: 1.5rem; /* 24px */
+  --sp-xl: 2rem; /* 32px */
+  --sp-2xl: 3rem; /* 48px */
+  --sp-3xl: 4rem; /* 64px */
+  --sp-4xl: 5rem; /* 80px */
+  --sp-5xl: 6rem; /* 96px */
+  --sp-6xl: 8rem; /* 128px*/
+}
+
+/**************************/
+/* RESET */
+/**************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--clr-neutral-light-1);
+  font-family: var(--font-1);
+  color: #171717;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+.header {
+  /* background-color: var(--clr-primary-1); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 24px 0;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.header--active {
+  background-color: #bfe4ff;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav__logo-img {
+}
+.nav__logo-text {
+}
+.nav__menu {
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+.nav__close {
+  display: none;
+}
+.ri-close-line {
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.nav__link {
+}
+.nav__link--accent {
+}
+.nav__btn {
+  background-color: #f26440;
+  padding: 15px 20px;
+  color: #fff;
+}
+.nav__toggle {
+  display: none;
+}
+.ri-menu-line {
+}
+
+.nav__btn--mobile {
+  display: none;
+}
+@media screen and (max-width: 930px) {
+  .nav__btn--desktop {
+    display: none;
+  }
+  .nav__toggle {
+    display: block;
+  }
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #bbe2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+    transform: translateY(-100%);
+  }
+  .nav__list {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    font-size: var(--fz-xl);
+  }
+  .nav__btn--mobile {
+    margin-top: var(--sp-2xl);
+    display: block;
+  }
+  .nav__close {
+    display: block;
+  }
+  .nav__close {
+    display: block;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    font-size: var(--fz-2xl);
+    color: #f26440;
+  }
+  .nav__menu--open {
+    transform: translateY(0%);
+  }
+}
+
+.hero {
+  padding: 133px 0 121px 0;
+  background-image: url("../img/hero.jpg");
+  background-position: 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+  color: #171717;
+}
+.hero__wrapper {
+}
+.hero__title {
+  max-width: 685px;
+  font-weight: var(--fw-bold);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.hero__title-orange {
+  color: #f26440;
+  position: relative;
+}
+.hero__title-orange::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  background-image: url("../img/title-line.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 10px;
+}
+.hero__text {
+  max-width: 603px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: var(--lh-3xl);
+  color: #1717177a;
+}
+.hero__btn {
+  color: #f26440;
+  border: 2px solid #f26440;
+  padding: 15px 20px;
+}
+
+/**************************/
+/* SERVICES */
+/**************************/
+.services-section {
+  padding: 120px 0 100px 0;
+}
+.services {
+}
+.services__top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.services__title {
+  /* font-size: 48px; */
+  font-size: clamp(24px, 5vw, 48px);
+}
+.services__text {
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 18px;
+}
+.services__item {
+}
+.services__img {
+}
+.services__subtitle {
+}
+.services__subtext {
+}
+.services__link {
+}

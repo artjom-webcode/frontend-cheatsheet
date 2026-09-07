@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Header</title>
+</head>
+
+<body>
+
+    <div class="navigation">
+        <input class="navigation__checkbox" id="navi-toggle" type="checkbox">
+
+        <label class="navigation__button" for="navi-toggle">
+            <span class="navigation__icon"></span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#" class="navigation__link">About</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Your benefits</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Popular tours</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Book now</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <header class="header">
+        <div class="header__logo-box">
+            LOGO
+        </div>
+
+        <div class="header__text-box">
+            <h1 class="heading-primary"> <!-- мы положили их в спам потому что мы хотим чтобы в h1 было два текста. чтоб гугл искал обо текста. А h1  может быть только один. но они разного размера.    -->
+                <span class="heading-primary--main">Outdoors</span>
+                <span class="heading-primary--sub">is where life happens</span>
+            </h1>
+
+            <a class="btn btn--white btn--animated" href="#!">Discover our tours</a>
+        </div>
+
+    </header>
+
+</body>
+
+</html>
+
+
+<!-- style -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #777;
+        padding: 30px;
+    }
+
+
+
+
+    /* navigaton */
+
+
+    .navigation__checkbox {
+        display: none;
+    }
+
+    .navigation__button {
+        background-color: #fff;
+        height: 70px;
+        width: 70px;
+        position: fixed;
+        top: 60px;
+        right: 60px;
+        border-radius: 50%;
+        z-index: 200;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .navigation__background {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        position: fixed;
+        z-index: 100;
+        top: 65px;
+        right: 65px;
+        background-image: radial-gradient(rgb(64, 191, 87), rgb(139, 233, 153));
+        transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+
+    .navigation__checkbox:checked~.navigation__background {
+        transform: scale(80);
+    }
+
+    .navigation__checkbox:checked~.navigation__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    .navigation__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 150;
+        opacity: 0;
+        width: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .navigation__list {
+        text-align: center;
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    .navigation__item {
+        margin: 10px;
+    }
+
+    .navigation__link {
+        display: inline-block;
+        font-size: 30px;
+        font-weight: 300;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+        background-size: 230%;
+        transition: all .4s;
+    }
+
+    .navigation__link:hover,
+    .navigation__link:active {
+        background-position: 100%;
+        color: rgb(64, 191, 87);
+        transform: translateX(15px);
+    }
+
+
+
+
+    /* NAVIGATION ICON */
+    .navigation__button {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .navigation__button:hover .navigation__icon::before {
+        /* когда мы наводим на кнопку то меняем псевдоэлемент вверх */
+        top: -10px;
+    }
+
+    .navigation__button:hover .navigation__icon::after {
+        top: 10px;
+    }
+
+    .navigation__icon {
+        margin-top: 35px;
+        position: relative;
+    }
+
+    .navigation__icon,
+    .navigation__icon::after,
+    .navigation__icon::before {
+        width: 30px;
+        height: 2px;
+        background-color: #333;
+        display: inline-block;
+    }
+
+    .navigation__icon::after,
+    .navigation__icon::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .3 s;
+    }
+
+    .navigation__icon::before {
+        top: -8px;
+    }
+
+    .navigation__icon::after {
+        top: 8px;
+    }
+
+    .navigation__checkbox:checked+.navigation__button .navigation__icon {
+        background-color: transparent;
+    }
+
+    .navigation__checkbox:checked+.navigation__button .navigation__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    .navigation__checkbox:checked+.navigation__button .navigation__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+
+
+
+
+
+
+
+    .header {
+        height: 95vh;
+        background-image: linear-gradient(to right bottom,
+                rgba(128, 214, 112, 0.8),
+                rgba(39, 180, 133, 0.8)),
+            url(https://source.unsplash.com/1920x1000?nature);
+        background-size: cover;
+        background-position: top;
+        position: relative;
+
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    }
+
+    /* стилизуем лого */
+    .header__logo-box {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+
+    .header__logo {
+        height: 35px;
+        /* Он предпочитаем всегда картинкам задавать высоту а ширина само подсчитается. Но можно и ширину задавать. Как кому удобно */
+    }
+
+    /* можно повесить анимацию при ховер */
+    /* .logo:hover {
+    animation: moveInRight 1s ease-out;
+} */
+
+    .header__text-box {
+        /* выставляем по центру блок с хедером и кнопкой */
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        /* странно что это свойство действует и на display: inline-block; элементы. потому что кнопка тоже встала по центру.*/
+    }
+
+    .heading-primary {
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+
+        backface-visibility: hidden;
+        /* при анимации буквы в конце чуть чуть дергаются. Такое бывает при анимации и не кто не знает почему. Но есть лекарство. Нужно родителю элементов(у которых висит анимация) поставить это свойство */
+    }
+
+    .heading-primary-main {
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+
+        /* animation */
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        /*
+        animation-iteration-count: 3;
+        animation-delay: 3s;
+        */
+    }
+
+    .heading-primary-sub {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 17.4px;
+
+        /* animation */
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+
+    /* Для браузера лучше всего анимировать два свойства
+    это opacity и другое transform. Это идельно для его 
+    производительности. На эти два свойства браузер и заточек
+    для анимаций. Но transform есть кучу подсвойств */
+    @keyframes moveInLeft {
+        0% {
+            /* какой мы хотим чтобы был элемент в начале (он должен быть невидимый) и где он должен находится (слева от своего положения) */
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+
+        80% {
+            transform: translateX(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes moveInRight {
+        0% {
+            /* какой мы хотим чтобы был элемент в начале (он должен быть невидимый) и где он должен находится (слева от своего положения) */
+            opacity: 0;
+            transform: translateX(100px);
+        }
+
+        80% {
+            transform: translateX(-10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes moveInButton {
+        0% {
+            /* какой мы хотим чтобы был элемент в начале (он должен быть невидимый) и где он должен находится (слева от своего положения) */
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    .btn:link,
+    .btn:visited {
+        display: inline-block;
+        /* a - это инлайн элемент на него не действуют паддинги как надо поэтому делаем inline-block */
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        border-radius: 100px;
+        transition: all .2s;
+
+        position: relative;
+        /* для эфекта */
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+        /* при клике на кнопку */
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn--white {
+        background-color: #fff;
+        color: #777;
+    }
+
+    .btn::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+
+    }
+
+    .btn--white::after {
+        background-color: #fff;
+    }
+
+    .btn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+
+    .btn--animated {
+        animation: moveInButton .5s ease-out .75s;
+    }
+</style>
+
+<!-- javascript -->
+<script>
+
+</script>
+
+<!-- SOME HELP -->
+<!-- 
+    ---fake images---
+    <img src="https://fakeimg.pl/250x100/">
+    <img src="https://fakeimg.pl/350x200/?text=Hello">
+
+    <img src="https://source.unsplash.com/400x400?nature" alt="" />
+    <img src="https://source.unsplash.com/400x400?1" alt="" />
+    <img src="https://source.unsplash.com/400x400?2" alt="" />
+
+  
+    ---FONT----
+    font-family: 'Lato', sans-serif;
+
+ -->
