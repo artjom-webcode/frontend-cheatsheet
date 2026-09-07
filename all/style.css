@@ -106,3 +106,35 @@ h6 {
 /**************************/
 /* HEADER */
 /**************************/
+
+.main {
+  padding: 24px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.item {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-basis: 350px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--clr-gray-3);
+}
+.item__title {
+  font-weight: var(--fw-bold);
+  color: var(--clr-gray-9);
+}
+.item__text {
+  color: var(--clr-gray-7);
+}
+.item__link {
+  margin-top: auto;
+  color: var(--clr-gray-7);
+}
+.item__link-github {
+  color: var(--clr-gray-7);
+}
