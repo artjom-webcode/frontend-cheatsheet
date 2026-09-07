@@ -134,6 +134,12 @@ const list = [
     itemLink: "/video-cards/index.html",
     itemLinkGithub: "video-cards",
   },
+  {
+    itemName: "Адаптивные карточки с изображениями",
+    itemText: "",
+    itemLink: "/cards/index.html",
+    itemLinkGithub: "cards",
+  },
 ];
 
 function renderMarkUp() {
